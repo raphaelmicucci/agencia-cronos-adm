@@ -72,7 +72,10 @@ let botaoConfirmarAdicao = document.getElementById("botao-confirmar");
 
 function cancelarAdicao(e) {
     e.preventDefault();
+
     modalAdicionar.style.display = "none";
+
+    limpaInputAdicao();
 }
 
 function confirmarAdicao(e) {
@@ -98,6 +101,15 @@ function confirmarAdicao(e) {
     
     // Exibe novamente a lista de cursos
     exibirCursos();
+
+    //Função para apagar os valores nos inputs
+    limpaInputAdicao();
+}
+
+function limpaInputAdicao() {
+    inputNome.value = "";
+    inputImagem.value = "";
+    inputDescricao.value = "";
 }
 
 function cancelarEdicao(e) {
@@ -120,8 +132,8 @@ function confirmarEdicao(e) {
         }
     }
 
-    // Fechando o modal de Adicionar
-    modalAdicionar.style.display = "none";
+    // Fechando o modal de Editar
+    modalEditar.style.display = "none";
     
     // Exibe novamente a lista de cursos
     exibirCursos();
@@ -197,15 +209,12 @@ botaoCancelarAdicao.addEventListener("click", cancelarAdicao);
 // Criando evento de click para o botão Confirmar a adição
 botaoConfirmarAdicao.addEventListener("click", confirmarAdicao);
 
-// Criando evento de click para fechar o modal de Adicionar quando houver click fora do modal
+// Criando evento de click para fechar o modal de Adicionar e o de Editar quando houver click fora do modal
 window.addEventListener("click", function (e) {
     if (e.target == modalAdicionar) {
         modalAdicionar.style.display = "none";
+        limpaInputAdicao();
     }
-})
-
-// Criando evento de click para fechar o modal de Editar quando houver click fora do modal
-window.addEventListener("click", function (e) {
     if (e.target == modalEditar) {
         modalEditar.style.display = "none";
     }
