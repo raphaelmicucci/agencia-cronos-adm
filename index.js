@@ -35,26 +35,8 @@ function exibirCursos() {
                 <td><img src=${cursos[i].imagem} class="img-fluid" /></td>
                 <td>${cursos[i].descricao}</td>
                 <td>
-                <dialog id="favDialog1">
-                <form method="dialog">
-                  <p><label>Editar Curso:
-                    <p>Nome do Curso:      <input type="text" name="NomeCurso" size="40" /></p>
-                    <p>Imagem do Curso:    <input type="text" name="ImagemCurso" size="40" /></p>
-                    <p>Descrição do Curso: <input type="text" name="DescricaoCurso" size="40" /></p>
-                  </label></p>
-                  
-                  <menu>
-                    <button value="cancel">Cancel</button>
-                    <button id="confirmBtn" value="default">Confirm</button>
-                  </menu>
-                </form>
-              </dialog>
-              
-              <menu>
-                <button class="btn btn-secondary m-1" id="btn btn-secondary m-1">editar</button>
-              </menu>
-                    
-                    <button class="btn btn-danger m-1">excluir</button>
+                    <button data-index="${cursos[i].id}" class="btn btn-secondary m-1">editar</button>
+                    <button data-index="${cursos[i].id}"class="btn btn-danger m-1">excluir</button>
                 </td>
             </tr>
         `    
@@ -69,15 +51,38 @@ function exibirCursos() {
 // Chamando a função para exibir os cursos
 exibirCursos();
 
+// Selecionando o botão para abrir o modal
+let botaoAdicionar = document.getElementById("btnAdicionar");
+
+// Selecionando o modal
+let modal = document.getElementById("myModal");
+
+
+function apareceModal() {
+    modal.style.display = "block";
+}
+
 // Criando variáveis para receberem os valores dos campos do formulário
 let inputNome = document.getElementById("nome-curso");
 let inputImagem = document.getElementById("imagem-curso");
 let inputDescricao = document.getElementById("descricao-curso");
 
-// Criando variável para 
-let botaoAdicionar = document.getElementById("btnAdicionar");
+// Criando variáveis para os botões Cancelar e Confirmar
+let botaoCancelar = document.getElementById("botao-cancelar");
+let botaoConfirmar = document.getElementById("botao-confirmar");
 
-function adicionarCurso() {
+
+function cancelarAdicao(e) {
+    e.preventDefault();
+    modal.style.display = "none";
+}
+
+
+function confirmarAdicao(e) {
+
+    // Previnindo comportamento padrão (de recarregar a página)
+    e.preventDefault();
+
     // Criando variáveis que recebem os valores dos inputs
     let idDoCurso = cursos.length + 1;
     let valorDoInputNome = inputNome.value;
@@ -92,8 +97,29 @@ function adicionarCurso() {
         descricao: valorDoInputDescricao
     })
 
+    // Fechando o modal
+    modal.style.display = "none";
+
     // Exibe novamente a lista de cursos
     exibirCursos();
 }
-// Criando evento de click para o botão Adicionar
-botaoAdicionar.addEventListener("click", adicionarCurso);
+
+
+// EVENT LISTENERS
+
+// Criando evento de click para o botão Adicionar (e aparecer o modal)
+botaoAdicionar.addEventListener("click", apareceModal);
+
+// Criando evento de click para o botão Adicionar (e aparecer o modal)
+botaoCancelar.addEventListener("click", cancelarAdicao);
+
+// Criando evento de click para o botão Adicionar (e aparecer o modal)
+botaoConfirmar.addEventListener("click", confirmarAdicao);
+
+window.addEventListener("click", function (e) {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+})
+
+  

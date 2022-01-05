@@ -29,21 +29,27 @@
 
           <h3>Serviços</h3>
 
-          <form id="formNovoCurso">
-            <h3>Novo Curso</h3>
-
-            <label for="NomeCurso">Nome do Curso:</label>
-            <input type="text" name="NomeCurso" id="nome-curso" /><br>
-
-            <label for="ImagemCurso">Imagem do Curso (url):</label>
-            <input type="text" name="ImagemCurso" id="imagem-curso"/><br>
-
-            <label for="DescricaoCurso">Descrição do Curso:</label>
-            <input type="text" name="DescricaoCurso" id="descricao-curso"/>
-          </form>
-
           <button class="btn btn-primary" id="btnAdicionar">Adicionar novo</button>
 
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+              <form id="formNovoCurso">
+                <h3>Novo Curso</h3>
+
+                <label for="NomeCurso">Nome do Curso:</label>
+                <input type="text" name="NomeCurso" id="nome-curso" /><br>
+
+                <label for="ImagemCurso">Imagem do Curso (url):</label>
+                <input type="text" name="ImagemCurso" id="imagem-curso"/><br>
+
+                <label for="DescricaoCurso">Descrição do Curso:</label>
+                <input type="text" name="DescricaoCurso" id="descricao-curso"/>
+
+                <button id="botao-cancelar" class="btn btn-danger m-1">Cancelar</button>
+                <button id="botao-confirmar" class="btn btn-primary" id="btnAdicionar">Confirmar</button>
+              </form>
+            </div>
+          </div>
 
           <table class="table my-5">
             <thead>
