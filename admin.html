@@ -28,7 +28,23 @@
 
 
           <h3>Serviços</h3>
-          <button class="btn btn-primary">Adicionar novo</button>
+
+          <form id="formNovoCurso">
+            <h3>Novo Curso</h3>
+
+            <label for="NomeCurso">Nome do Curso:</label>
+            <input type="text" name="NomeCurso" id="nome-curso" /><br>
+
+            <label for="ImagemCurso">Imagem do Curso (url):</label>
+            <input type="text" name="ImagemCurso" id="imagem-curso"/><br>
+
+            <label for="DescricaoCurso">Descrição do Curso:</label>
+            <input type="text" name="DescricaoCurso" id="descricao-curso"/>
+          </form>
+
+          <button class="btn btn-primary" id="btnAdicionar">Adicionar novo</button>
+
+
           <table class="table my-5">
             <thead>
               <tr>
@@ -39,6 +55,7 @@
               </tr>
             </thead>
             <tbody id="painel-cursos">
+
             </tbody>
           </table>
         </div>
@@ -56,7 +73,7 @@
 
   <!-- Adicionado link para o arquivo index.js (aquele que acessa e modifica a DOM)-->
   <script src="./index.js"></script>
-  
+
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
   </script>
