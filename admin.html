@@ -31,7 +31,7 @@
 
           <button class="btn btn-primary" id="btnAdicionar">Adicionar novo</button>
 
-          <div id="myModal" class="modal">
+          <div id="modalAdicionar" class="modal">
             <div class="modal-content">
               <form id="formNovoCurso">
                 <h3>Novo Curso</h3>
@@ -61,9 +61,31 @@
               </tr>
             </thead>
             <tbody id="painel-cursos">
-
             </tbody>
           </table>
+        
+          <div id="modalEditar" class="modal">
+            <div class="modal-content">
+              <form id="formNovoCurso">
+                <h3>Editar Curso</h3>
+
+                <input style="display: none" type="text" id="id-curso-edicao">
+
+                <label for="NomeCurso">Nome do Curso:</label>
+                <input type="text" name="NomeCurso" id="nome-curso-edicao" /><br>
+
+                <label for="ImagemCurso">Imagem do Curso (url):</label>
+                <input type="text" name="ImagemCurso" id="imagem-curso-edicao"/><br>
+
+                <label for="DescricaoCurso">Descrição do Curso:</label>
+                <input type="text" name="DescricaoCurso" id="descricao-curso-edicao"/>
+
+                <button id="botao-cancelar-edicao" class="btn btn-danger m-1">Cancelar</button>
+                <button id="botao-confirmar-edicao" class="btn btn-primary" id="btnAdicionar">Confirmar</button>
+              </form>
+            </div>
+          </div>
+        
         </div>
       </div>
     </div>
