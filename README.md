@@ -23,7 +23,7 @@ O site opera nas seguintes dimensões de telas:
 - [x] Ao clicar no botão adicionar novo, deve exibir o formulário de cadastro de serviço.
 - [x] Ao clicar no botão editar, deve exibir o formulário preenchido com os dados do serviço escolhido e guardar as alterações quando clicar no botão salvar
 - [x] Ao clicar no botão excluir, deve remover o serviço escolhido.
-- [ ] Renderizar a página utilizando React.
+- [x] Renderizar a página utilizando React.
 
 
 ### Site desenvolvido por:
