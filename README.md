@@ -1,4 +1,4 @@
-## CRONOS AGÊNCIA - Desafio em Trio - Grupo 22
+## CRONOS AGÊNCIA - Desafio - Grupo 22
 
 <a href="https://raphaelmicucci.github.io/agencia-cronos-adm/public/index.html">Você pode acessar o projeto aqui</a>
 
